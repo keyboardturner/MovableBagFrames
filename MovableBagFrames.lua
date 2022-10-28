@@ -75,6 +75,11 @@ local BagsFrameEventFrame = CreateFrame("Frame");
 BagsFrameEventFrame:RegisterEvent("ADDON_LOADED");
 BagsFrameEventFrame:RegisterEvent("PLAYER_INTERACTION_MANAGER_FRAME_SHOW");
 BagsFrameEventFrame:RegisterEvent("BANKFRAME_CLOSED");
+BagsFrameEventFrame:RegisterEvent("BANKFRAME_OPENED");
+BagsFrameEventFrame:RegisterEvent("PLAYERBANKSLOTS_CHANGED");
+BagsFrameEventFrame:RegisterEvent("MERCHANT_SHOW");
+
+
 function BagsFrameEventFrame:OnEvent(event,arg1)
 	if event == "ADDON_LOADED" and arg1 == "MovableBagFrames" then
 		if not MoveBagsF_DB then
@@ -86,7 +91,7 @@ function BagsFrameEventFrame:OnEvent(event,arg1)
 		BagsFramePanel.CBSlider:SetValue(MoveBagsF_DB.CBBagsFrame.scale*100);
 		BagsFramePanel.SB1Slider:SetValue(MoveBagsF_DB.CBBagsFrame.scale*100);
 	end
-	if event == "PLAYER_INTERACTION_MANAGER_FRAME_SHOW" or "BANKFRAME_CLOSED" then
+	if event == "PLAYER_INTERACTION_MANAGER_FRAME_SHOW" or "BANKFRAME_CLOSED" or "PLAYERBANKSLOTS_CHANGED" or "MERCHANT_SHOW" or "BANKFRAME_OPENED" then
 		BagsFrameEventFrame.TokenChange()
 	end
 end
