@@ -143,7 +143,7 @@ function BagsFrameEventFrame.Stuff()
 	end);
 end
 
-function BagsFrameEventFrame.ReMoveStuff(event,arg1)
+function BagsFrameEventFrame.ReMoveStuff()
 	ContainerFrameCombinedBags:ClearAllPoints()
 	ContainerFrameCombinedBags:SetPoint(MoveBagsF_DB.CBBagsFrame.point, nil, MoveBagsF_DB.CBBagsFrame.relativePoint, MoveBagsF_DB.CBBagsFrame.x, MoveBagsF_DB.CBBagsFrame.y);
 	ContainerFrameCombinedBags:SetScale(MoveBagsF_DB.CBBagsFrame.scale);
