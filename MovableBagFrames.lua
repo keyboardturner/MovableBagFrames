@@ -9,14 +9,14 @@ local defaultsTable = {
 }
 
 local BagsFramePanel = CreateFrame("FRAME", "BagStuff");
-BagsFramePanel.name = "BagsFrameScaler";
+BagsFramePanel.name = "Movable Bag Frames";
 
 BagsFramePanel.Headline = BagsFramePanel:CreateFontString(nil, "OVERLAY", "GameFontNormal");
 BagsFramePanel.Headline:SetFont(BagsFramePanel.Headline:GetFont(), 23);
 BagsFramePanel.Headline:SetTextColor(0,1,0,1);
 BagsFramePanel.Headline:ClearAllPoints();
 BagsFramePanel.Headline:SetPoint("TOPLEFT", BagsFramePanel, "TOPLEFT",12,-12);
-BagsFramePanel.Headline:SetText("Resizable Bag Frame");
+BagsFramePanel.Headline:SetText("Movable & Resizable Bag Frames");
 
 BagsFramePanel.Version = BagsFramePanel:CreateFontString(nil, "OVERLAY", "GameFontNormal");
 BagsFramePanel.Version:SetFont(BagsFramePanel.Version:GetFont(), 12);
@@ -73,6 +73,7 @@ InterfaceOptions_AddCategory(BagsFramePanel);
 
 local BagsFrameEventFrame = CreateFrame("Frame");
 BagsFrameEventFrame:RegisterEvent("ADDON_LOADED");
+BagsFrameEventFrame:RegisterEvent("PLAYER_LOGOUT");
 BagsFrameEventFrame:RegisterEvent("PLAYER_INTERACTION_MANAGER_FRAME_SHOW");
 BagsFrameEventFrame:RegisterEvent("BANKFRAME_CLOSED");
 BagsFrameEventFrame:RegisterEvent("BANKFRAME_OPENED");
@@ -93,6 +94,10 @@ function BagsFrameEventFrame:OnEvent(event,arg1)
 	end
 	if event == "PLAYER_INTERACTION_MANAGER_FRAME_SHOW" or "BANKFRAME_CLOSED" or "PLAYERBANKSLOTS_CHANGED" or "MERCHANT_SHOW" or "BANKFRAME_OPENED" then
 		BagsFrameEventFrame.TokenChange()
+	end
+	if event == "PLAYER_LOGOUT" then
+		ContainerFrameCombinedBags:SetUserPlaced(false);
+		ContainerFrameCombinedBags:ClearAllPoints()
 	end
 end
 BagsFrameEventFrame:SetScript("OnEvent",BagsFrameEventFrame.OnEvent);
@@ -138,7 +143,7 @@ function BagsFrameEventFrame.Stuff()
 	end);
 end
 
-function BagsFrameEventFrame.ReMoveStuff()
+function BagsFrameEventFrame.ReMoveStuff(event,arg1)
 	ContainerFrameCombinedBags:ClearAllPoints()
 	ContainerFrameCombinedBags:SetPoint(MoveBagsF_DB.CBBagsFrame.point, nil, MoveBagsF_DB.CBBagsFrame.relativePoint, MoveBagsF_DB.CBBagsFrame.x, MoveBagsF_DB.CBBagsFrame.y);
 	ContainerFrameCombinedBags:SetScale(MoveBagsF_DB.CBBagsFrame.scale);
