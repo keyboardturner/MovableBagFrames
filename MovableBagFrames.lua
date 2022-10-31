@@ -136,6 +136,9 @@ function BagsFrameEventFrame:OnEvent(event,arg1)
 		ContainerFrame5:SetUserPlaced(false);
 		ContainerFrame5:ClearAllPoints();
 		
+		ContainerFrame6:SetUserPlaced(false);
+		ContainerFrame6:ClearAllPoints();
+		
 		ContainerFrame7:SetUserPlaced(false);
 		ContainerFrame7:ClearAllPoints();
 		
@@ -251,6 +254,15 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.S5BagsFrame.x = xOfs
 			MoveBagsF_DB.S5BagsFrame.y = yOfs
 			MoveBagsF_DB.S5BagsFrame.height = frame:GetHeight()
+			BagsFrameEventFrame.ReMoveStuff()
+		end
+
+		if frame == ContainerFrame6 then
+			MoveBagsF_DB.RBBagsFrame.point = point
+			MoveBagsF_DB.RBBagsFrame.relativePoint = relativePoint
+			MoveBagsF_DB.RBBagsFrame.x = xOfs
+			MoveBagsF_DB.RBBagsFrame.y = yOfs
+			MoveBagsF_DB.RBBagsFrame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -393,6 +405,8 @@ function BagsFrameEventFrame.StartUp()
 	BagsFrameEventFrame.Stuff(ContainerFrame3);
 	BagsFrameEventFrame.Stuff(ContainerFrame4);
 	BagsFrameEventFrame.Stuff(ContainerFrame5);
+	
+	BagsFrameEventFrame.Stuff(ContainerFrame6);
 
 	BagsFrameEventFrame.Stuff(ContainerFrame7);
 	BagsFrameEventFrame.Stuff(ContainerFrame8);
@@ -434,6 +448,10 @@ function BagsFrameEventFrame.CheckSVs()
 
 	if MoveBagsF_DB.S5BagsFrame == nil then
 		MoveBagsF_DB.S5BagsFrame = defaultsTable.S5BagsFrame
+	end
+
+	if MoveBagsF_DB.RBBagsFrame == nil then
+		MoveBagsF_DB.RBBagsFrame = defaultsTable.RBBagsFrame
 	end
 
 	if MoveBagsF_DB.BK7Frame == nil then
@@ -501,6 +519,11 @@ function BagsFrameEventFrame.ReMoveStuff()
 	ContainerFrame5:ClearAllPoints()
 	ContainerFrame5:SetPoint(MoveBagsF_DB.S5BagsFrame.point, UIParent, MoveBagsF_DB.S5BagsFrame.relativePoint, MoveBagsF_DB.S5BagsFrame.x, MoveBagsF_DB.S5BagsFrame.y);
 	ContainerFrame5:SetScale(MoveBagsF_DB.BagsSetting.scale);
+
+	
+	ContainerFrame6:ClearAllPoints()
+	ContainerFrame6:SetPoint(MoveBagsF_DB.RBBagsFrame.point, UIParent, MoveBagsF_DB.RBBagsFrame.relativePoint, MoveBagsF_DB.RBBagsFrame.x, MoveBagsF_DB.RBBagsFrame.y);
+	ContainerFrame6:SetScale(MoveBagsF_DB.BagsSetting.scale);
 
 	
 	ContainerFrame7:ClearAllPoints()
@@ -573,6 +596,11 @@ function BagsFrameEventFrame.TokenChange()
 	ContainerFrame5:ClearAllPoints()
 	ContainerFrame5:Hide()
 	ContainerFrame5:SetScale(MoveBagsF_DB.BagsSetting.scale);
+
+	
+	ContainerFrame6:ClearAllPoints()
+	ContainerFrame6:Hide()
+	ContainerFrame6:SetScale(MoveBagsF_DB.BagsSetting.scale);
 
 	
 	ContainerFrame7:ClearAllPoints()
