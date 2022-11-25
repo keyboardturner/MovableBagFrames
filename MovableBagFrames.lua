@@ -1,26 +1,26 @@
 local defaultsTable = {
-	CBBagsFrame = {x = -10, y = -85, height = 475, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
+	CBBagsFrame = {x = -10, y = -85, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
 	
-	S1BagsFrame = {x = -10, y = 85, height = 475, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
-	S2BagsFrame = {x = -10, y = 10, height = 475, point = "RIGHT", relativePoint = "RIGHT",},
-	S3BagsFrame = {x = -10, y = -1, height = 475, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
-	S4BagsFrame = {x = -200, y = 85, height = 475, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
-	S5BagsFrame = {x = -200, y = 75, height = 475, point = "RIGHT", relativePoint = "RIGHT",},
+	S1BagsFrame = {x = -10, y = 85, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
+	S2BagsFrame = {x = -10, y = 10, point = "RIGHT", relativePoint = "RIGHT",},
+	S3BagsFrame = {x = -10, y = -1, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
+	S4BagsFrame = {x = -200, y = 85, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
+	S5BagsFrame = {x = -200, y = 75, point = "RIGHT", relativePoint = "RIGHT",},
 
 
-	BankFrame = {x = 0, y = 8, height = 475, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
+	BankFrame = {x = 0, y = 8, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
 
-	BK7Frame = {x = -450, y = 85, height = 475, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
-	BK8Frame = {x = -450, y = -177, height = 475, point = "RIGHT", relativePoint = "RIGHT",},
-	BK9Frame = {x = -450, y = 50, height = 475, point = "RIGHT", relativePoint = "RIGHT",},
-	BK10Frame = {x = -450, y = -210, height = 475, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
-	BK11Frame = {x = -450, y = 0, height = 475, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
-	BK12Frame = {x = 338, y = 85, height = 475, point = "BOTTOM", relativePoint = "BOTTOM",},
-	BK13Frame = {x = 338, y = -177, height = 475, point = "CENTER", relativePoint = "CENTER",},
+	BK7Frame = {x = -450, y = 85, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
+	BK8Frame = {x = -450, y = -177, point = "RIGHT", relativePoint = "RIGHT",},
+	BK9Frame = {x = -450, y = 50, point = "RIGHT", relativePoint = "RIGHT",},
+	BK10Frame = {x = -450, y = -210, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
+	BK11Frame = {x = -450, y = 0, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
+	BK12Frame = {x = 338, y = 85, point = "BOTTOM", relativePoint = "BOTTOM",},
+	BK13Frame = {x = 338, y = -177, point = "CENTER", relativePoint = "CENTER",},
 
-	RBBagsFrame = {x = -224, y = -165, height = 475, point = "RIGHT", relativePoint = "RIGHT",},
+	RBBagsFrame = {x = -224, y = -165, point = "RIGHT", relativePoint = "RIGHT",},
 
-	BagsSetting = {show = true, checked = true, scale = 1, locked = false},
+	BagsSetting = {show = true, checked = true, scale = 1, locked = false, click = true, sort = false, insert = false},
 	
 };
 
@@ -71,7 +71,7 @@ BagsFramePanel.CBSlider:ClearAllPoints();
 BagsFramePanel.CBSlider:SetPoint("TOPLEFT", BagsFramePanel, "TOPLEFT",12,-53);
 getglobal(BagsFramePanel.CBSlider:GetName() .. 'Low'):SetText('50');
 getglobal(BagsFramePanel.CBSlider:GetName() .. 'High'):SetText('150');
-getglobal(BagsFramePanel.CBSlider:GetName() .. 'Text'):SetText('Combined Bag Frame Size');
+getglobal(BagsFramePanel.CBSlider:GetName() .. 'Text'):SetText('Bag Frames Size');
 BagsFramePanel.CBSlider:SetScript("OnValueChanged", function()
 	local scaleValue = getglobal(BagsFramePanel.CBSlider:GetName()):GetValue() / 100;
 	MoveBagsF_DB.BagsSetting.scale = scaleValue;
@@ -80,7 +80,7 @@ end)
 BagsFramePanel.CBCheckbox = CreateFrame("CheckButton", "CBCheckbox", BagsFramePanel, "UICheckButtonTemplate");
 BagsFramePanel.CBCheckbox:ClearAllPoints();
 BagsFramePanel.CBCheckbox:SetPoint("TOPLEFT", 350, -53);
-getglobal(BagsFramePanel.CBCheckbox:GetName().."Text"):SetText("Combined Bag Frame Locked");
+getglobal(BagsFramePanel.CBCheckbox:GetName().."Text"):SetText("Bag Frames Locked");
 
 BagsFramePanel.CBCheckbox:SetScript("OnClick", function(self)
 	if BagsFramePanel.CBCheckbox:GetChecked() then
@@ -89,6 +89,53 @@ BagsFramePanel.CBCheckbox:SetScript("OnClick", function(self)
 		MoveBagsF_DB.BagsSetting.locked = false;
 	end
 end);
+
+BagsFramePanel.SortCheckbox = CreateFrame("CheckButton", "SortCheckbox", BagsFramePanel, "UICheckButtonTemplate");
+BagsFramePanel.SortCheckbox:ClearAllPoints();
+BagsFramePanel.SortCheckbox:SetPoint("TOPLEFT", 350, -53*2);
+getglobal(BagsFramePanel.SortCheckbox:GetName().."Text"):SetText("Sort Bags Right to Left\n(Reagents may not be sorted into reagent bag)");
+getglobal(BagsFramePanel.SortCheckbox:GetName().."Text"):SetJustifyH("LEFT");
+
+BagsFramePanel.SortCheckbox:SetScript("OnClick", function(self)
+	if BagsFramePanel.SortCheckbox:GetChecked() then
+		MoveBagsF_DB.BagsSetting.sort = true;
+		C_Container.SetSortBagsRightToLeft(true)
+	else
+		MoveBagsF_DB.BagsSetting.sort = false;
+		C_Container.SetSortBagsRightToLeft(false)
+	end
+end);
+
+BagsFramePanel.InsertCheckbox = CreateFrame("CheckButton", "InsertCheckbox", BagsFramePanel, "UICheckButtonTemplate");
+BagsFramePanel.InsertCheckbox:ClearAllPoints();
+BagsFramePanel.InsertCheckbox:SetPoint("TOPLEFT", 350, -53*3);
+getglobal(BagsFramePanel.InsertCheckbox:GetName().."Text"):SetText("Loot Items Right to Left");
+
+BagsFramePanel.InsertCheckbox:SetScript("OnClick", function(self)
+	if BagsFramePanel.InsertCheckbox:GetChecked() then
+		MoveBagsF_DB.BagsSetting.insert = true;
+		C_Container.SetInsertItemsLeftToRight(true)
+	else
+		MoveBagsF_DB.BagsSetting.insert = false;
+		C_Container.SetInsertItemsLeftToRight(false)
+	end
+end);
+
+
+BagsFramePanel.ClickBagCheckbox = CreateFrame("CheckButton", "ClickBagCheckbox", BagsFramePanel, "UICheckButtonTemplate");
+BagsFramePanel.ClickBagCheckbox:ClearAllPoints();
+BagsFramePanel.ClickBagCheckbox:SetPoint("TOPLEFT", 350, -53*4);
+getglobal(BagsFramePanel.ClickBagCheckbox:GetName().."Text"):SetText("Correct Micromenu Bag Button Click\n(Experimental)");
+getglobal(BagsFramePanel.ClickBagCheckbox:GetName().."Text"):SetJustifyH("LEFT");
+
+BagsFramePanel.ClickBagCheckbox:SetScript("OnClick", function(self)
+	if BagsFramePanel.ClickBagCheckbox:GetChecked() then
+		MoveBagsF_DB.BagsSetting.click = true;
+	else
+		MoveBagsF_DB.BagsSetting.click = false;
+	end
+end);
+
 
 InterfaceOptions_AddCategory(BagsFramePanel);
 
@@ -99,76 +146,11 @@ BagsFrameEventFrame:RegisterEvent("PLAYER_LOGOUT");
 BagsFrameEventFrame:RegisterEvent("PLAYER_INTERACTION_MANAGER_FRAME_SHOW");
 BagsFrameEventFrame:RegisterEvent("BANKFRAME_CLOSED");
 BagsFrameEventFrame:RegisterEvent("BANKFRAME_OPENED");
-BagsFrameEventFrame:RegisterEvent("PLAYERBANKSLOTS_CHANGED");
+--BagsFrameEventFrame:RegisterEvent("PLAYERBANKSLOTS_CHANGED");
 BagsFrameEventFrame:RegisterEvent("MERCHANT_SHOW");
 BagsFrameEventFrame:RegisterEvent("AUCTION_HOUSE_SHOW");
 
 
-function BagsFrameEventFrame:OnEvent(event,arg1)
-	if event == "ADDON_LOADED" and arg1 == "MovableBagFrames" then
-		if not MoveBagsF_DB then
-			MoveBagsF_DB = defaultsTable;
-		end
-		if not MoveBagsF_DB.BagsSetting.scale then
-			MoveBagsF_DB.BagsSetting.scale = defaultsTable.BagsSetting.scale;
-		end
-		BagsFramePanel.CBSlider:SetValue(MoveBagsF_DB.BagsSetting.scale*100);
-	end
-	if event ~= "ADDON_LOADED" then
-		BagsFrameEventFrame.TokenChange()
-	end
-	if event == "PLAYER_LOGOUT" then
-		ContainerFrameCombinedBags:SetUserPlaced(false);
-		ContainerFrameCombinedBags:ClearAllPoints();
-
-		ContainerFrame1:SetUserPlaced(false);
-		ContainerFrame1:ClearAllPoints();
-		
-		ContainerFrame2:SetUserPlaced(false);
-		ContainerFrame2:ClearAllPoints();
-		
-		ContainerFrame3:SetUserPlaced(false);
-		ContainerFrame3:ClearAllPoints();
-		
-		ContainerFrame4:SetUserPlaced(false);
-		ContainerFrame4:ClearAllPoints();
-		
-		ContainerFrame5:SetUserPlaced(false);
-		ContainerFrame5:ClearAllPoints();
-		
-		ContainerFrame6:SetUserPlaced(false);
-		ContainerFrame6:ClearAllPoints();
-		
-		ContainerFrame7:SetUserPlaced(false);
-		ContainerFrame7:ClearAllPoints();
-		
-		ContainerFrame8:SetUserPlaced(false);
-		ContainerFrame8:ClearAllPoints();
-		
-		ContainerFrame9:SetUserPlaced(false);
-		ContainerFrame9:ClearAllPoints();
-		
-		ContainerFrame10:SetUserPlaced(false);
-		ContainerFrame10:ClearAllPoints();
-		
-		ContainerFrame11:SetUserPlaced(false);
-		ContainerFrame11:ClearAllPoints();
-		
-		ContainerFrame12:SetUserPlaced(false);
-		ContainerFrame12:ClearAllPoints();
-		
-		ContainerFrame13:SetUserPlaced(false);
-		ContainerFrame13:ClearAllPoints();
-		
-		ContainerFrame13:SetUserPlaced(false);
-		ContainerFrame13:ClearAllPoints();
-		
-		BankFrame:SetUserPlaced(false);
-		BankFrame:ClearAllPoints();
-	end
-	BagsFramePanel.CBCheckbox:SetChecked(MoveBagsF_DB.BagsSetting.locked);
-end
-BagsFrameEventFrame:SetScript("OnEvent",BagsFrameEventFrame.OnEvent);
 
 function BagsFrameEventFrame.Stuff(frame,button)
 	frame:ClearAllPoints()
@@ -208,7 +190,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.CBBagsFrame.relativePoint = relativePoint
 			MoveBagsF_DB.CBBagsFrame.x = xOfs
 			MoveBagsF_DB.CBBagsFrame.y = yOfs
-			MoveBagsF_DB.CBBagsFrame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -217,7 +198,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.S1BagsFrame.relativePoint = relativePoint
 			MoveBagsF_DB.S1BagsFrame.x = xOfs
 			MoveBagsF_DB.S1BagsFrame.y = yOfs
-			MoveBagsF_DB.S1BagsFrame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -226,7 +206,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.S2BagsFrame.relativePoint = relativePoint
 			MoveBagsF_DB.S2BagsFrame.x = xOfs
 			MoveBagsF_DB.S2BagsFrame.y = yOfs
-			MoveBagsF_DB.S2BagsFrame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -235,7 +214,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.S3BagsFrame.relativePoint = relativePoint
 			MoveBagsF_DB.S3BagsFrame.x = xOfs
 			MoveBagsF_DB.S3BagsFrame.y = yOfs
-			MoveBagsF_DB.S3BagsFrame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -244,7 +222,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.S4BagsFrame.relativePoint = relativePoint
 			MoveBagsF_DB.S4BagsFrame.x = xOfs
 			MoveBagsF_DB.S4BagsFrame.y = yOfs
-			MoveBagsF_DB.S4BagsFrame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -253,7 +230,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.S5BagsFrame.relativePoint = relativePoint
 			MoveBagsF_DB.S5BagsFrame.x = xOfs
 			MoveBagsF_DB.S5BagsFrame.y = yOfs
-			MoveBagsF_DB.S5BagsFrame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -262,7 +238,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.RBBagsFrame.relativePoint = relativePoint
 			MoveBagsF_DB.RBBagsFrame.x = xOfs
 			MoveBagsF_DB.RBBagsFrame.y = yOfs
-			MoveBagsF_DB.RBBagsFrame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -271,7 +246,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.BK7Frame.relativePoint = relativePoint
 			MoveBagsF_DB.BK7Frame.x = xOfs
 			MoveBagsF_DB.BK7Frame.y = yOfs
-			MoveBagsF_DB.BK7Frame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -280,7 +254,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.BK8Frame.relativePoint = relativePoint
 			MoveBagsF_DB.BK8Frame.x = xOfs
 			MoveBagsF_DB.BK8Frame.y = yOfs
-			MoveBagsF_DB.BK8Frame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -289,7 +262,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.BK9Frame.relativePoint = relativePoint
 			MoveBagsF_DB.BK9Frame.x = xOfs
 			MoveBagsF_DB.BK9Frame.y = yOfs
-			MoveBagsF_DB.BK9Frame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -298,7 +270,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.BK10Frame.relativePoint = relativePoint
 			MoveBagsF_DB.BK10Frame.x = xOfs
 			MoveBagsF_DB.BK10Frame.y = yOfs
-			MoveBagsF_DB.BK10Frame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -307,7 +278,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.BK11Frame.relativePoint = relativePoint
 			MoveBagsF_DB.BK11Frame.x = xOfs
 			MoveBagsF_DB.BK11Frame.y = yOfs
-			MoveBagsF_DB.BK11Frame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -316,7 +286,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.BK12Frame.relativePoint = relativePoint
 			MoveBagsF_DB.BK12Frame.x = xOfs
 			MoveBagsF_DB.BK12Frame.y = yOfs
-			MoveBagsF_DB.BK12Frame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -325,7 +294,6 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.BK13Frame.relativePoint = relativePoint
 			MoveBagsF_DB.BK13Frame.x = xOfs
 			MoveBagsF_DB.BK13Frame.y = yOfs
-			MoveBagsF_DB.BK13Frame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 
@@ -334,12 +302,19 @@ function BagsFrameEventFrame.Stuff(frame,button)
 			MoveBagsF_DB.BankFrame.relativePoint = relativePoint
 			MoveBagsF_DB.BankFrame.x = xOfs
 			MoveBagsF_DB.BankFrame.y = yOfs
-			MoveBagsF_DB.BankFrame.height = frame:GetHeight()
 			BagsFrameEventFrame.ReMoveStuff()
 		end
 	end);
 end
 
+
+BagsFrameEventFrame.ReagentColors6 = CreateFrame("Frame")
+BagsFrameEventFrame.ReagentColors6:SetPoint("CENTER", ContainerFrame6.Bg, "CENTER", 0, 0);
+BagsFrameEventFrame.ReagentColors6:SetParent(ContainerFrame6.Bg)
+BagsFrameEventFrame.ReagentColors6:SetSize(100,100)
+BagsFrameEventFrame.ReagentColors6.Tex = BagsFrameEventFrame.ReagentColors6:CreateTexture(nil, "ARTWORK", nil, 0)
+BagsFrameEventFrame.ReagentColors6.Tex:SetAllPoints(ContainerFrame6.Bg)
+BagsFrameEventFrame.ReagentColors6.Tex:SetColorTexture(.49,1.0,.49,.2)
 
 BagsFrameEventFrame.BankColors7 = CreateFrame("Frame")
 BagsFrameEventFrame.BankColors7:SetPoint("CENTER", ContainerFrame7.Bg, "CENTER", 0, 0);
@@ -422,63 +397,107 @@ function BagsFrameEventFrame.StartUp()
 end
 
 function BagsFrameEventFrame.CheckSVs()
+	--need to fix to prevent future bugs, this should not have been saved
+	if MoveBagsF_DB.CBBagsFrame.height then
+		MoveBagsF_DB.CBBagsFrame.height = nil
+	end
+	if MoveBagsF_DB.S1BagsFrame.height then
+		MoveBagsF_DB.S1BagsFrame.height = nil
+	end
+	if MoveBagsF_DB.S2BagsFrame.height then
+		MoveBagsF_DB.S2BagsFrame.height = nil
+	end
+	if MoveBagsF_DB.S3BagsFrame.height then
+		MoveBagsF_DB.S3BagsFrame.height = nil
+	end
+	if MoveBagsF_DB.S4BagsFrame.height then
+		MoveBagsF_DB.S4BagsFrame.height = nil
+	end
+	if MoveBagsF_DB.S5BagsFrame.height then
+		MoveBagsF_DB.S5BagsFrame.height = nil
+	end
+	if MoveBagsF_DB.RBBagsFrame.height then
+		MoveBagsF_DB.RBBagsFrame.height = nil
+	end
+	if MoveBagsF_DB.BK7Frame.height then
+		MoveBagsF_DB.BK7Frame.height = nil
+	end
+	if MoveBagsF_DB.BK8Frame.height then
+		MoveBagsF_DB.BK8Frame.height = nil
+	end
+	if MoveBagsF_DB.BK9Frame.height then
+		MoveBagsF_DB.BK9Frame.height = nil
+	end
+	if MoveBagsF_DB.BK10Frame.height then
+		MoveBagsF_DB.BK10Frame.height = nil
+	end
+	if MoveBagsF_DB.BK11Frame.height then
+		MoveBagsF_DB.BK11Frame.height = nil
+	end
+	if MoveBagsF_DB.BK12Frame.height then
+		MoveBagsF_DB.BK12Frame.height = nil
+	end
+	if MoveBagsF_DB.BK13Frame.height then
+		MoveBagsF_DB.BK13Frame.height = nil
+	end
+
 	if MoveBagsF_DB == nil then
 		MoveBagsF_DB = defaultsTable
 	end
 
-	if MoveBagsF_DB.CBBagsFrame == nil then
+	if MoveBagsF_DB.CBBagsFrame.x == nil then
 		MoveBagsF_DB.CBBagsFrame = defaultsTable.CBBagsFrame
 	end
 
-	if MoveBagsF_DB.S1BagsFrame == nil then
+	if MoveBagsF_DB.S1BagsFrame.x == nil then
 		MoveBagsF_DB.S1BagsFrame = defaultsTable.S1BagsFrame
 	end
 
-	if MoveBagsF_DB.S2BagsFrame == nil then
+	if MoveBagsF_DB.S2BagsFrame.x == nil then
 		MoveBagsF_DB.S2BagsFrame = defaultsTable.S2BagsFrame
 	end
 
-	if MoveBagsF_DB.S3BagsFrame == nil then
+	if MoveBagsF_DB.S3BagsFrame.x == nil then
 		MoveBagsF_DB.S3BagsFrame = defaultsTable.S3BagsFrame
 	end
 
-	if MoveBagsF_DB.S4BagsFrame == nil then
+	if MoveBagsF_DB.S4BagsFrame.x == nil then
 		MoveBagsF_DB.S4BagsFrame = defaultsTable.S4BagsFrame
 	end
 
-	if MoveBagsF_DB.S5BagsFrame == nil then
+	if MoveBagsF_DB.S5BagsFrame.x == nil then
 		MoveBagsF_DB.S5BagsFrame = defaultsTable.S5BagsFrame
 	end
 
-	if MoveBagsF_DB.RBBagsFrame == nil then
+	if MoveBagsF_DB.RBBagsFrame.x == nil then
 		MoveBagsF_DB.RBBagsFrame = defaultsTable.RBBagsFrame
 	end
 
-	if MoveBagsF_DB.BK7Frame == nil then
+	if MoveBagsF_DB.BK7Frame.x == nil then
 		MoveBagsF_DB.BK7Frame = defaultsTable.BK7Frame
 	end
 
-	if MoveBagsF_DB.BK8Frame == nil then
+	if MoveBagsF_DB.BK8Frame.x == nil then
 		MoveBagsF_DB.BK8Frame = defaultsTable.BK8Frame
 	end
 
-	if MoveBagsF_DB.BK9Frame == nil then
+	if MoveBagsF_DB.BK9Frame.x == nil then
 		MoveBagsF_DB.BK9Frame = defaultsTable.BK9Frame
 	end
 
-	if MoveBagsF_DB.BK10Frame == nil then
+	if MoveBagsF_DB.BK10Frame.x == nil then
 		MoveBagsF_DB.BK10Frame = defaultsTable.BK10Frame
 	end
 
-	if MoveBagsF_DB.BK11Frame == nil then
+	if MoveBagsF_DB.BK11Frame.x == nil then
 		MoveBagsF_DB.BK11Frame = defaultsTable.BK11Frame
 	end
 
-	if MoveBagsF_DB.BK12Frame == nil then
+	if MoveBagsF_DB.BK12Frame.x == nil then
 		MoveBagsF_DB.BK12Frame = defaultsTable.BK12Frame
 	end
 
-	if MoveBagsF_DB.BK13Frame == nil then
+	if MoveBagsF_DB.BK13Frame.x == nil then
 		MoveBagsF_DB.BK13Frame = defaultsTable.BK13Frame
 	end
 --[[
@@ -649,6 +668,7 @@ EventRegistry:RegisterCallback('ContainerFrame.OnShowTokenWatcher', BagsFrameEve
 EventRegistry:RegisterCallback('ContainerFrame.OpenBag', BagsFrameEventFrame.StartUp)
 EventRegistry:RegisterCallback('ContainerFrame.OpenAllBags', BagsFrameEventFrame.ReMoveStuff)
 EventRegistry:RegisterCallback('TokenFrame.OnTokenWatchChanged', BagsFrameEventFrame.TokenChange)
+--EventRegistry:RegisterCallback('ItemButton.UpdateItemContextMatching', BagsFrameEventFrame.ReMoveStuff)
 
 --BANKFRAME_OPENED
 --ADDON_LOADED "Blizzard_AuctionHouseShared"
@@ -662,3 +682,101 @@ EventRegistry:RegisterCallback('TokenFrame.OnTokenWatchChanged', BagsFrameEventF
 --ContainerFrame3 -- top right, 0, 8
 --ContainerFrame4 -- bottom left, -11, 0
 --ContainerFrame5 -- top right, 0, 8
+
+
+function BagsFrameEventFrame:OnEvent(event,arg1)
+	if event == "ADDON_LOADED" and arg1 == "MovableBagFrames" then
+		if not MoveBagsF_DB then
+			MoveBagsF_DB = defaultsTable;
+		end
+		if not MoveBagsF_DB.BagsSetting.scale then
+			MoveBagsF_DB.BagsSetting.scale = defaultsTable.BagsSetting.scale;
+		end
+		if MoveBagsF_DB.BagsSetting.click == nil then
+			print("setting the click function thing")
+			MoveBagsF_DB.BagsSetting.click = defaultsTable.BagsSetting.click;
+		end
+		if MoveBagsF_DB.BagsSetting.sort == nil then
+			MoveBagsF_DB.BagsSetting.sort = defaultsTable.BagsSetting.sort;
+		end
+		if MoveBagsF_DB.BagsSetting.insert == nil then
+			MoveBagsF_DB.BagsSetting.insert = defaultsTable.BagsSetting.insert;
+		end
+		BagsFramePanel.CBSlider:SetValue(MoveBagsF_DB.BagsSetting.scale*100);
+		BagsFramePanel.CBCheckbox:SetChecked(MoveBagsF_DB.BagsSetting.locked);
+		BagsFramePanel.SortCheckbox:SetChecked(MoveBagsF_DB.BagsSetting.sort);
+		BagsFramePanel.InsertCheckbox:SetChecked(MoveBagsF_DB.BagsSetting.insert);
+		C_Container.SetSortBagsRightToLeft(MoveBagsF_DB.BagsSetting.sort)
+		C_Container.SetInsertItemsLeftToRight(MoveBagsF_DB.BagsSetting.insert)
+
+		BagsFramePanel.ClickBagCheckbox:SetChecked(MoveBagsF_DB.BagsSetting.click);
+		
+	end
+	if event ~= "ADDON_LOADED" then
+		BagsFrameEventFrame.TokenChange()
+	end
+	if event == "PLAYER_LOGOUT" then
+		ContainerFrameCombinedBags:SetUserPlaced(false);
+		ContainerFrameCombinedBags:ClearAllPoints();
+
+		ContainerFrame1:SetUserPlaced(false);
+		ContainerFrame1:ClearAllPoints();
+		
+		ContainerFrame2:SetUserPlaced(false);
+		ContainerFrame2:ClearAllPoints();
+		
+		ContainerFrame3:SetUserPlaced(false);
+		ContainerFrame3:ClearAllPoints();
+		
+		ContainerFrame4:SetUserPlaced(false);
+		ContainerFrame4:ClearAllPoints();
+		
+		ContainerFrame5:SetUserPlaced(false);
+		ContainerFrame5:ClearAllPoints();
+		
+		ContainerFrame6:SetUserPlaced(false);
+		ContainerFrame6:ClearAllPoints();
+		
+		ContainerFrame7:SetUserPlaced(false);
+		ContainerFrame7:ClearAllPoints();
+		
+		ContainerFrame8:SetUserPlaced(false);
+		ContainerFrame8:ClearAllPoints();
+		
+		ContainerFrame9:SetUserPlaced(false);
+		ContainerFrame9:ClearAllPoints();
+		
+		ContainerFrame10:SetUserPlaced(false);
+		ContainerFrame10:ClearAllPoints();
+		
+		ContainerFrame11:SetUserPlaced(false);
+		ContainerFrame11:ClearAllPoints();
+		
+		ContainerFrame12:SetUserPlaced(false);
+		ContainerFrame12:ClearAllPoints();
+		
+		ContainerFrame13:SetUserPlaced(false);
+		ContainerFrame13:ClearAllPoints();
+		
+		ContainerFrame13:SetUserPlaced(false);
+		ContainerFrame13:ClearAllPoints();
+		
+		BankFrame:SetUserPlaced(false);
+		BankFrame:ClearAllPoints();
+	end
+end
+BagsFrameEventFrame:SetScript("OnEvent",BagsFrameEventFrame.OnEvent);
+
+
+ -- "fix" button click, no longer taints
+function BagsFrameEventFrame.Test()
+	if MoveBagsF_DB.BagsSetting.click == true then
+		BagsFrameEventFrame.ReMoveStuff()
+	end
+end
+hooksecurefunc('ToggleBag', BagsFrameEventFrame.Test)
+
+function BagsFrameEventFrame.delay()
+	RunNextFrame(BagsFrameEventFrame.ReMoveStuff)
+end
+EventRegistry:RegisterCallback('ContainerFrame.CloseBag', BagsFrameEventFrame.delay)
