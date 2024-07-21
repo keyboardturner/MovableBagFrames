@@ -60,7 +60,7 @@ BagsFramePanel.Version:SetFont(BagsFramePanel.Version:GetFont(), 12);
 BagsFramePanel.Version:SetTextColor(1,1,1,1);
 BagsFramePanel.Version:ClearAllPoints();
 BagsFramePanel.Version:SetPoint("TOPLEFT", BagsFramePanel, "TOPLEFT",400,-21);
-BagsFramePanel.Version:SetText("Version: " .. GetAddOnMetadata("MovableBagFrames", "Version"));
+BagsFramePanel.Version:SetText("Version: " .. C_AddOns.GetAddOnMetadata("MovableBagFrames", "Version"));
 
 BagsFramePanel.CBSlider = CreateFrame("Slider", "BagsFrameScaleCBSlider", BagsFramePanel, "OptionsSliderTemplate");
 BagsFramePanel.CBSlider:SetWidth(300);
@@ -151,8 +151,9 @@ BagsFramePanel.CharSpecificCheckbox:SetScript("OnClick", function(self)
 	end
 end);
 
-
-InterfaceOptions_AddCategory(BagsFramePanel);
+local category, layout = Settings.RegisterCanvasLayoutCategory(BagsFramePanel, BagsFramePanel.name, BagsFramePanel.name);
+category.ID = BagsFramePanel.name;
+Settings.RegisterAddOnCategory(category)
 
 
 local BagsFrameEventFrame = CreateFrame("Frame");
