@@ -1,4 +1,4 @@
-## Interface: 110002, 110005
+## Interface: 110005, 110007
 ## Title: Movable Bag Frames
 ## Notes: Allows the bag frames to be resizeable and movable.
 ## IconTexture: Interface/Addons/MovableBagFrames/MovableBagFrames.blp
