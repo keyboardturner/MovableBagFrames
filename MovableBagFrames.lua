@@ -8,15 +8,15 @@ local defaultsTable = {
 	S5BagsFrame = {x = -200, y = 75, point = "RIGHT", relativePoint = "RIGHT",},
 
 
-	BankFrame = {x = 0, y = 8, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
+	--BankFrame = {x = 0, y = 8, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
 
-	BK7Frame = {x = -450, y = 85, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
-	BK8Frame = {x = -450, y = -177, point = "RIGHT", relativePoint = "RIGHT",},
-	BK9Frame = {x = -450, y = 50, point = "RIGHT", relativePoint = "RIGHT",},
-	BK10Frame = {x = -450, y = -210, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
-	BK11Frame = {x = -450, y = 0, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
-	BK12Frame = {x = 338, y = 85, point = "BOTTOM", relativePoint = "BOTTOM",},
-	BK13Frame = {x = 338, y = -177, point = "CENTER", relativePoint = "CENTER",},
+	--BK7Frame = {x = -450, y = 85, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
+	--BK8Frame = {x = -450, y = -177, point = "RIGHT", relativePoint = "RIGHT",},
+	--BK9Frame = {x = -450, y = 50, point = "RIGHT", relativePoint = "RIGHT",},
+	--BK10Frame = {x = -450, y = -210, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
+	--BK11Frame = {x = -450, y = 0, point = "TOPRIGHT", relativePoint = "TOPRIGHT",},
+	--BK12Frame = {x = 338, y = 85, point = "BOTTOM", relativePoint = "BOTTOM",},
+	--BK13Frame = {x = 338, y = -177, point = "CENTER", relativePoint = "CENTER",},
 
 	RBBagsFrame = {x = -224, y = -165, point = "RIGHT", relativePoint = "RIGHT",},
 
@@ -260,69 +260,69 @@ function BagsFrameEventFrame.Stuff(frame,button)
 				BagsFrameEventFrame.ReMoveStuff()
 			end
 
-			if frame == ContainerFrame7 then
-				MoveBagsPC_DB.BK7Frame.point = point
-				MoveBagsPC_DB.BK7Frame.relativePoint = relativePoint
-				MoveBagsPC_DB.BK7Frame.x = xOfs
-				MoveBagsPC_DB.BK7Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame8 then
-				MoveBagsPC_DB.BK8Frame.point = point
-				MoveBagsPC_DB.BK8Frame.relativePoint = relativePoint
-				MoveBagsPC_DB.BK8Frame.x = xOfs
-				MoveBagsPC_DB.BK8Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame9 then
-				MoveBagsPC_DB.BK9Frame.point = point
-				MoveBagsPC_DB.BK9Frame.relativePoint = relativePoint
-				MoveBagsPC_DB.BK9Frame.x = xOfs
-				MoveBagsPC_DB.BK9Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame10 then
-				MoveBagsPC_DB.BK10Frame.point = point
-				MoveBagsPC_DB.BK10Frame.relativePoint = relativePoint
-				MoveBagsPC_DB.BK10Frame.x = xOfs
-				MoveBagsPC_DB.BK10Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame11 then
-				MoveBagsPC_DB.BK11Frame.point = point
-				MoveBagsPC_DB.BK11Frame.relativePoint = relativePoint
-				MoveBagsPC_DB.BK11Frame.x = xOfs
-				MoveBagsPC_DB.BK11Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame12 then
-				MoveBagsPC_DB.BK12Frame.point = point
-				MoveBagsPC_DB.BK12Frame.relativePoint = relativePoint
-				MoveBagsPC_DB.BK12Frame.x = xOfs
-				MoveBagsPC_DB.BK12Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame13 then
-				MoveBagsPC_DB.BK13Frame.point = point
-				MoveBagsPC_DB.BK13Frame.relativePoint = relativePoint
-				MoveBagsPC_DB.BK13Frame.x = xOfs
-				MoveBagsPC_DB.BK13Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == BankFrame then
-				MoveBagsPC_DB.BankFrame.point = point
-				MoveBagsPC_DB.BankFrame.relativePoint = relativePoint
-				MoveBagsPC_DB.BankFrame.x = xOfs
-				MoveBagsPC_DB.BankFrame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
+			--if frame == ContainerFrame7 then
+			--	MoveBagsPC_DB.BK7Frame.point = point
+			--	MoveBagsPC_DB.BK7Frame.relativePoint = relativePoint
+			--	MoveBagsPC_DB.BK7Frame.x = xOfs
+			--	MoveBagsPC_DB.BK7Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame8 then
+			--	MoveBagsPC_DB.BK8Frame.point = point
+			--	MoveBagsPC_DB.BK8Frame.relativePoint = relativePoint
+			--	MoveBagsPC_DB.BK8Frame.x = xOfs
+			--	MoveBagsPC_DB.BK8Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame9 then
+			--	MoveBagsPC_DB.BK9Frame.point = point
+			--	MoveBagsPC_DB.BK9Frame.relativePoint = relativePoint
+			--	MoveBagsPC_DB.BK9Frame.x = xOfs
+			--	MoveBagsPC_DB.BK9Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame10 then
+			--	MoveBagsPC_DB.BK10Frame.point = point
+			--	MoveBagsPC_DB.BK10Frame.relativePoint = relativePoint
+			--	MoveBagsPC_DB.BK10Frame.x = xOfs
+			--	MoveBagsPC_DB.BK10Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame11 then
+			--	MoveBagsPC_DB.BK11Frame.point = point
+			--	MoveBagsPC_DB.BK11Frame.relativePoint = relativePoint
+			--	MoveBagsPC_DB.BK11Frame.x = xOfs
+			--	MoveBagsPC_DB.BK11Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame12 then
+			--	MoveBagsPC_DB.BK12Frame.point = point
+			--	MoveBagsPC_DB.BK12Frame.relativePoint = relativePoint
+			--	MoveBagsPC_DB.BK12Frame.x = xOfs
+			--	MoveBagsPC_DB.BK12Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame13 then
+			--	MoveBagsPC_DB.BK13Frame.point = point
+			--	MoveBagsPC_DB.BK13Frame.relativePoint = relativePoint
+			--	MoveBagsPC_DB.BK13Frame.x = xOfs
+			--	MoveBagsPC_DB.BK13Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == BankFrame then
+			--	MoveBagsPC_DB.BankFrame.point = point
+			--	MoveBagsPC_DB.BankFrame.relativePoint = relativePoint
+			--	MoveBagsPC_DB.BankFrame.x = xOfs
+			--	MoveBagsPC_DB.BankFrame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
 
 		else
 
@@ -382,69 +382,69 @@ function BagsFrameEventFrame.Stuff(frame,button)
 				BagsFrameEventFrame.ReMoveStuff()
 			end
 
-			if frame == ContainerFrame7 then
-				MoveBagsF_DB.BK7Frame.point = point
-				MoveBagsF_DB.BK7Frame.relativePoint = relativePoint
-				MoveBagsF_DB.BK7Frame.x = xOfs
-				MoveBagsF_DB.BK7Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame8 then
-				MoveBagsF_DB.BK8Frame.point = point
-				MoveBagsF_DB.BK8Frame.relativePoint = relativePoint
-				MoveBagsF_DB.BK8Frame.x = xOfs
-				MoveBagsF_DB.BK8Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame9 then
-				MoveBagsF_DB.BK9Frame.point = point
-				MoveBagsF_DB.BK9Frame.relativePoint = relativePoint
-				MoveBagsF_DB.BK9Frame.x = xOfs
-				MoveBagsF_DB.BK9Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame10 then
-				MoveBagsF_DB.BK10Frame.point = point
-				MoveBagsF_DB.BK10Frame.relativePoint = relativePoint
-				MoveBagsF_DB.BK10Frame.x = xOfs
-				MoveBagsF_DB.BK10Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame11 then
-				MoveBagsF_DB.BK11Frame.point = point
-				MoveBagsF_DB.BK11Frame.relativePoint = relativePoint
-				MoveBagsF_DB.BK11Frame.x = xOfs
-				MoveBagsF_DB.BK11Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame12 then
-				MoveBagsF_DB.BK12Frame.point = point
-				MoveBagsF_DB.BK12Frame.relativePoint = relativePoint
-				MoveBagsF_DB.BK12Frame.x = xOfs
-				MoveBagsF_DB.BK12Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == ContainerFrame13 then
-				MoveBagsF_DB.BK13Frame.point = point
-				MoveBagsF_DB.BK13Frame.relativePoint = relativePoint
-				MoveBagsF_DB.BK13Frame.x = xOfs
-				MoveBagsF_DB.BK13Frame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
-
-			if frame == BankFrame then
-				MoveBagsF_DB.BankFrame.point = point
-				MoveBagsF_DB.BankFrame.relativePoint = relativePoint
-				MoveBagsF_DB.BankFrame.x = xOfs
-				MoveBagsF_DB.BankFrame.y = yOfs
-				BagsFrameEventFrame.ReMoveStuff()
-			end
+			--if frame == ContainerFrame7 then
+			--	MoveBagsF_DB.BK7Frame.point = point
+			--	MoveBagsF_DB.BK7Frame.relativePoint = relativePoint
+			--	MoveBagsF_DB.BK7Frame.x = xOfs
+			--	MoveBagsF_DB.BK7Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame8 then
+			--	MoveBagsF_DB.BK8Frame.point = point
+			--	MoveBagsF_DB.BK8Frame.relativePoint = relativePoint
+			--	MoveBagsF_DB.BK8Frame.x = xOfs
+			--	MoveBagsF_DB.BK8Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame9 then
+			--	MoveBagsF_DB.BK9Frame.point = point
+			--	MoveBagsF_DB.BK9Frame.relativePoint = relativePoint
+			--	MoveBagsF_DB.BK9Frame.x = xOfs
+			--	MoveBagsF_DB.BK9Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame10 then
+			--	MoveBagsF_DB.BK10Frame.point = point
+			--	MoveBagsF_DB.BK10Frame.relativePoint = relativePoint
+			--	MoveBagsF_DB.BK10Frame.x = xOfs
+			--	MoveBagsF_DB.BK10Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame11 then
+			--	MoveBagsF_DB.BK11Frame.point = point
+			--	MoveBagsF_DB.BK11Frame.relativePoint = relativePoint
+			--	MoveBagsF_DB.BK11Frame.x = xOfs
+			--	MoveBagsF_DB.BK11Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame12 then
+			--	MoveBagsF_DB.BK12Frame.point = point
+			--	MoveBagsF_DB.BK12Frame.relativePoint = relativePoint
+			--	MoveBagsF_DB.BK12Frame.x = xOfs
+			--	MoveBagsF_DB.BK12Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == ContainerFrame13 then
+			--	MoveBagsF_DB.BK13Frame.point = point
+			--	MoveBagsF_DB.BK13Frame.relativePoint = relativePoint
+			--	MoveBagsF_DB.BK13Frame.x = xOfs
+			--	MoveBagsF_DB.BK13Frame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
+--
+			--if frame == BankFrame then
+			--	MoveBagsF_DB.BankFrame.point = point
+			--	MoveBagsF_DB.BankFrame.relativePoint = relativePoint
+			--	MoveBagsF_DB.BankFrame.x = xOfs
+			--	MoveBagsF_DB.BankFrame.y = yOfs
+			--	BagsFrameEventFrame.ReMoveStuff()
+			--end
 
 		end
 
@@ -460,61 +460,61 @@ BagsFrameEventFrame.ReagentColors6.Tex = BagsFrameEventFrame.ReagentColors6:Crea
 BagsFrameEventFrame.ReagentColors6.Tex:SetAllPoints(ContainerFrame6.Bg)
 BagsFrameEventFrame.ReagentColors6.Tex:SetColorTexture(.49,1.0,.49,.2)
 
-BagsFrameEventFrame.BankColors7 = CreateFrame("Frame")
-BagsFrameEventFrame.BankColors7:SetPoint("CENTER", ContainerFrame7.Bg, "CENTER", 0, 0);
-BagsFrameEventFrame.BankColors7:SetParent(ContainerFrame7.Bg)
-BagsFrameEventFrame.BankColors7:SetSize(100,100)
-BagsFrameEventFrame.BankColors7.Tex = BagsFrameEventFrame.BankColors7:CreateTexture(nil, "ARTWORK", nil, 0)
-BagsFrameEventFrame.BankColors7.Tex:SetAllPoints(ContainerFrame7.Bg)
-BagsFrameEventFrame.BankColors7.Tex:SetColorTexture(1,.75,0,.2)
-
-BagsFrameEventFrame.BankColors8 = CreateFrame("Frame")
-BagsFrameEventFrame.BankColors8:SetPoint("CENTER", ContainerFrame8.Bg, "CENTER", 0, 0);
-BagsFrameEventFrame.BankColors8:SetParent(ContainerFrame8.Bg)
-BagsFrameEventFrame.BankColors8:SetSize(100,100)
-BagsFrameEventFrame.BankColors8.Tex = BagsFrameEventFrame.BankColors8:CreateTexture(nil, "ARTWORK", nil, 0)
-BagsFrameEventFrame.BankColors8.Tex:SetAllPoints(ContainerFrame8.Bg)
-BagsFrameEventFrame.BankColors8.Tex:SetColorTexture(1,.75,0,.2)
-
-BagsFrameEventFrame.BankColors9 = CreateFrame("Frame")
-BagsFrameEventFrame.BankColors9:SetPoint("CENTER", ContainerFrame9.Bg, "CENTER", 0, 0);
-BagsFrameEventFrame.BankColors9:SetParent(ContainerFrame9.Bg)
-BagsFrameEventFrame.BankColors9:SetSize(100,100)
-BagsFrameEventFrame.BankColors9.Tex = BagsFrameEventFrame.BankColors9:CreateTexture(nil, "ARTWORK", nil, 0)
-BagsFrameEventFrame.BankColors9.Tex:SetAllPoints(ContainerFrame9.Bg)
-BagsFrameEventFrame.BankColors9.Tex:SetColorTexture(1,.75,0,.2)
-
-BagsFrameEventFrame.BankColors10 = CreateFrame("Frame")
-BagsFrameEventFrame.BankColors10:SetPoint("CENTER", ContainerFrame10.Bg, "CENTER", 0, 0);
-BagsFrameEventFrame.BankColors10:SetParent(ContainerFrame10.Bg)
-BagsFrameEventFrame.BankColors10:SetSize(100,100)
-BagsFrameEventFrame.BankColors10.Tex = BagsFrameEventFrame.BankColors10:CreateTexture(nil, "ARTWORK", nil, 0)
-BagsFrameEventFrame.BankColors10.Tex:SetAllPoints(ContainerFrame10.Bg)
-BagsFrameEventFrame.BankColors10.Tex:SetColorTexture(1,.75,0,.2)
-
-BagsFrameEventFrame.BankColors11 = CreateFrame("Frame")
-BagsFrameEventFrame.BankColors11:SetPoint("CENTER", ContainerFrame11.Bg, "CENTER", 0, 0);
-BagsFrameEventFrame.BankColors11:SetParent(ContainerFrame11.Bg)
-BagsFrameEventFrame.BankColors11:SetSize(100,100)
-BagsFrameEventFrame.BankColors11.Tex = BagsFrameEventFrame.BankColors11:CreateTexture(nil, "ARTWORK", nil, 0)
-BagsFrameEventFrame.BankColors11.Tex:SetAllPoints(ContainerFrame11.Bg)
-BagsFrameEventFrame.BankColors11.Tex:SetColorTexture(1,.75,0,.2)
-
-BagsFrameEventFrame.BankColors12 = CreateFrame("Frame")
-BagsFrameEventFrame.BankColors12:SetPoint("CENTER", ContainerFrame12.Bg, "CENTER", 0, 0);
-BagsFrameEventFrame.BankColors12:SetParent(ContainerFrame12.Bg)
-BagsFrameEventFrame.BankColors12:SetSize(100,100)
-BagsFrameEventFrame.BankColors12.Tex = BagsFrameEventFrame.BankColors12:CreateTexture(nil, "ARTWORK", nil, 0)
-BagsFrameEventFrame.BankColors12.Tex:SetAllPoints(ContainerFrame12.Bg)
-BagsFrameEventFrame.BankColors12.Tex:SetColorTexture(1,.75,0,.2)
-
-BagsFrameEventFrame.BankColors13 = CreateFrame("Frame")
-BagsFrameEventFrame.BankColors13:SetPoint("CENTER", ContainerFrame13.Bg, "CENTER", 0, 0);
-BagsFrameEventFrame.BankColors13:SetParent(ContainerFrame13.Bg)
-BagsFrameEventFrame.BankColors13:SetSize(100,100)
-BagsFrameEventFrame.BankColors13.Tex = BagsFrameEventFrame.BankColors13:CreateTexture(nil, "ARTWORK", nil, 0)
-BagsFrameEventFrame.BankColors13.Tex:SetAllPoints(ContainerFrame13.Bg)
-BagsFrameEventFrame.BankColors13.Tex:SetColorTexture(1,.75,0,.2)
+--BagsFrameEventFrame.BankColors7 = CreateFrame("Frame")
+--BagsFrameEventFrame.BankColors7:SetPoint("CENTER", ContainerFrame7.Bg, "CENTER", 0, 0);
+--BagsFrameEventFrame.BankColors7:SetParent(ContainerFrame7.Bg)
+--BagsFrameEventFrame.BankColors7:SetSize(100,100)
+--BagsFrameEventFrame.BankColors7.Tex = BagsFrameEventFrame.BankColors7:CreateTexture(nil, "ARTWORK", nil, 0)
+--BagsFrameEventFrame.BankColors7.Tex:SetAllPoints(ContainerFrame7.Bg)
+--BagsFrameEventFrame.BankColors7.Tex:SetColorTexture(1,.75,0,.2)
+--
+--BagsFrameEventFrame.BankColors8 = CreateFrame("Frame")
+--BagsFrameEventFrame.BankColors8:SetPoint("CENTER", ContainerFrame8.Bg, "CENTER", 0, 0);
+--BagsFrameEventFrame.BankColors8:SetParent(ContainerFrame8.Bg)
+--BagsFrameEventFrame.BankColors8:SetSize(100,100)
+--BagsFrameEventFrame.BankColors8.Tex = BagsFrameEventFrame.BankColors8:CreateTexture(nil, "ARTWORK", nil, 0)
+--BagsFrameEventFrame.BankColors8.Tex:SetAllPoints(ContainerFrame8.Bg)
+--BagsFrameEventFrame.BankColors8.Tex:SetColorTexture(1,.75,0,.2)
+--
+--BagsFrameEventFrame.BankColors9 = CreateFrame("Frame")
+--BagsFrameEventFrame.BankColors9:SetPoint("CENTER", ContainerFrame9.Bg, "CENTER", 0, 0);
+--BagsFrameEventFrame.BankColors9:SetParent(ContainerFrame9.Bg)
+--BagsFrameEventFrame.BankColors9:SetSize(100,100)
+--BagsFrameEventFrame.BankColors9.Tex = BagsFrameEventFrame.BankColors9:CreateTexture(nil, "ARTWORK", nil, 0)
+--BagsFrameEventFrame.BankColors9.Tex:SetAllPoints(ContainerFrame9.Bg)
+--BagsFrameEventFrame.BankColors9.Tex:SetColorTexture(1,.75,0,.2)
+--
+--BagsFrameEventFrame.BankColors10 = CreateFrame("Frame")
+--BagsFrameEventFrame.BankColors10:SetPoint("CENTER", ContainerFrame10.Bg, "CENTER", 0, 0);
+--BagsFrameEventFrame.BankColors10:SetParent(ContainerFrame10.Bg)
+--BagsFrameEventFrame.BankColors10:SetSize(100,100)
+--BagsFrameEventFrame.BankColors10.Tex = BagsFrameEventFrame.BankColors10:CreateTexture(nil, "ARTWORK", nil, 0)
+--BagsFrameEventFrame.BankColors10.Tex:SetAllPoints(ContainerFrame10.Bg)
+--BagsFrameEventFrame.BankColors10.Tex:SetColorTexture(1,.75,0,.2)
+--
+--BagsFrameEventFrame.BankColors11 = CreateFrame("Frame")
+--BagsFrameEventFrame.BankColors11:SetPoint("CENTER", ContainerFrame11.Bg, "CENTER", 0, 0);
+--BagsFrameEventFrame.BankColors11:SetParent(ContainerFrame11.Bg)
+--BagsFrameEventFrame.BankColors11:SetSize(100,100)
+--BagsFrameEventFrame.BankColors11.Tex = BagsFrameEventFrame.BankColors11:CreateTexture(nil, "ARTWORK", nil, 0)
+--BagsFrameEventFrame.BankColors11.Tex:SetAllPoints(ContainerFrame11.Bg)
+--BagsFrameEventFrame.BankColors11.Tex:SetColorTexture(1,.75,0,.2)
+--
+--BagsFrameEventFrame.BankColors12 = CreateFrame("Frame")
+--BagsFrameEventFrame.BankColors12:SetPoint("CENTER", ContainerFrame12.Bg, "CENTER", 0, 0);
+--BagsFrameEventFrame.BankColors12:SetParent(ContainerFrame12.Bg)
+--BagsFrameEventFrame.BankColors12:SetSize(100,100)
+--BagsFrameEventFrame.BankColors12.Tex = BagsFrameEventFrame.BankColors12:CreateTexture(nil, "ARTWORK", nil, 0)
+--BagsFrameEventFrame.BankColors12.Tex:SetAllPoints(ContainerFrame12.Bg)
+--BagsFrameEventFrame.BankColors12.Tex:SetColorTexture(1,.75,0,.2)
+--
+--BagsFrameEventFrame.BankColors13 = CreateFrame("Frame")
+--BagsFrameEventFrame.BankColors13:SetPoint("CENTER", ContainerFrame13.Bg, "CENTER", 0, 0);
+--BagsFrameEventFrame.BankColors13:SetParent(ContainerFrame13.Bg)
+--BagsFrameEventFrame.BankColors13:SetSize(100,100)
+--BagsFrameEventFrame.BankColors13.Tex = BagsFrameEventFrame.BankColors13:CreateTexture(nil, "ARTWORK", nil, 0)
+--BagsFrameEventFrame.BankColors13.Tex:SetAllPoints(ContainerFrame13.Bg)
+--BagsFrameEventFrame.BankColors13.Tex:SetColorTexture(1,.75,0,.2)
 
 
 function BagsFrameEventFrame.StartUp()
@@ -527,13 +527,13 @@ function BagsFrameEventFrame.StartUp()
 	
 	BagsFrameEventFrame.Stuff(ContainerFrame6);
 
-	BagsFrameEventFrame.Stuff(ContainerFrame7);
-	BagsFrameEventFrame.Stuff(ContainerFrame8);
-	BagsFrameEventFrame.Stuff(ContainerFrame9);
-	BagsFrameEventFrame.Stuff(ContainerFrame10);
-	BagsFrameEventFrame.Stuff(ContainerFrame11);
-	BagsFrameEventFrame.Stuff(ContainerFrame12);
-	BagsFrameEventFrame.Stuff(ContainerFrame13);
+	--BagsFrameEventFrame.Stuff(ContainerFrame7);
+	--BagsFrameEventFrame.Stuff(ContainerFrame8);
+	--BagsFrameEventFrame.Stuff(ContainerFrame9);
+	--BagsFrameEventFrame.Stuff(ContainerFrame10);
+	--BagsFrameEventFrame.Stuff(ContainerFrame11);
+	--BagsFrameEventFrame.Stuff(ContainerFrame12);
+	--BagsFrameEventFrame.Stuff(ContainerFrame13);
 	--[[
 	BagsFrameEventFrame.Stuff(BankFrame);
 ]]
@@ -563,27 +563,27 @@ function BagsFrameEventFrame.CheckSVs()
 	if MoveBagsF_DB.RBBagsFrame.height then
 		MoveBagsF_DB.RBBagsFrame.height = nil
 	end
-	if MoveBagsF_DB.BK7Frame.height then
-		MoveBagsF_DB.BK7Frame.height = nil
-	end
-	if MoveBagsF_DB.BK8Frame.height then
-		MoveBagsF_DB.BK8Frame.height = nil
-	end
-	if MoveBagsF_DB.BK9Frame.height then
-		MoveBagsF_DB.BK9Frame.height = nil
-	end
-	if MoveBagsF_DB.BK10Frame.height then
-		MoveBagsF_DB.BK10Frame.height = nil
-	end
-	if MoveBagsF_DB.BK11Frame.height then
-		MoveBagsF_DB.BK11Frame.height = nil
-	end
-	if MoveBagsF_DB.BK12Frame.height then
-		MoveBagsF_DB.BK12Frame.height = nil
-	end
-	if MoveBagsF_DB.BK13Frame.height then
-		MoveBagsF_DB.BK13Frame.height = nil
-	end
+	--if MoveBagsF_DB.BK7Frame.height then
+	--	MoveBagsF_DB.BK7Frame.height = nil
+	--end
+	--if MoveBagsF_DB.BK8Frame.height then
+	--	MoveBagsF_DB.BK8Frame.height = nil
+	--end
+	--if MoveBagsF_DB.BK9Frame.height then
+	--	MoveBagsF_DB.BK9Frame.height = nil
+	--end
+	--if MoveBagsF_DB.BK10Frame.height then
+	--	MoveBagsF_DB.BK10Frame.height = nil
+	--end
+	--if MoveBagsF_DB.BK11Frame.height then
+	--	MoveBagsF_DB.BK11Frame.height = nil
+	--end
+	--if MoveBagsF_DB.BK12Frame.height then
+	--	MoveBagsF_DB.BK12Frame.height = nil
+	--end
+	--if MoveBagsF_DB.BK13Frame.height then
+	--	MoveBagsF_DB.BK13Frame.height = nil
+	--end
 
 
 
@@ -619,33 +619,33 @@ function BagsFrameEventFrame.CheckSVs()
 		MoveBagsPC_DB.RBBagsFrame = defaultsTable.RBBagsFrame
 	end
 
-	if MoveBagsPC_DB.BK7Frame.x == nil then
-		MoveBagsPC_DB.BK7Frame = defaultsTable.BK7Frame
-	end
-
-	if MoveBagsPC_DB.BK8Frame.x == nil then
-		MoveBagsPC_DB.BK8Frame = defaultsTable.BK8Frame
-	end
-
-	if MoveBagsPC_DB.BK9Frame.x == nil then
-		MoveBagsPC_DB.BK9Frame = defaultsTable.BK9Frame
-	end
-
-	if MoveBagsPC_DB.BK10Frame.x == nil then
-		MoveBagsPC_DB.BK10Frame = defaultsTable.BK10Frame
-	end
-
-	if MoveBagsPC_DB.BK11Frame.x == nil then
-		MoveBagsPC_DB.BK11Frame = defaultsTable.BK11Frame
-	end
-
-	if MoveBagsPC_DB.BK12Frame.x == nil then
-		MoveBagsPC_DB.BK12Frame = defaultsTable.BK12Frame
-	end
-
-	if MoveBagsPC_DB.BK13Frame.x == nil then
-		MoveBagsPC_DB.BK13Frame = defaultsTable.BK13Frame
-	end
+	--if MoveBagsPC_DB.BK7Frame.x == nil then
+	--	MoveBagsPC_DB.BK7Frame = defaultsTable.BK7Frame
+	--end
+--
+	--if MoveBagsPC_DB.BK8Frame.x == nil then
+	--	MoveBagsPC_DB.BK8Frame = defaultsTable.BK8Frame
+	--end
+--
+	--if MoveBagsPC_DB.BK9Frame.x == nil then
+	--	MoveBagsPC_DB.BK9Frame = defaultsTable.BK9Frame
+	--end
+--
+	--if MoveBagsPC_DB.BK10Frame.x == nil then
+	--	MoveBagsPC_DB.BK10Frame = defaultsTable.BK10Frame
+	--end
+--
+	--if MoveBagsPC_DB.BK11Frame.x == nil then
+	--	MoveBagsPC_DB.BK11Frame = defaultsTable.BK11Frame
+	--end
+--
+	--if MoveBagsPC_DB.BK12Frame.x == nil then
+	--	MoveBagsPC_DB.BK12Frame = defaultsTable.BK12Frame
+	--end
+--
+	--if MoveBagsPC_DB.BK13Frame.x == nil then
+	--	MoveBagsPC_DB.BK13Frame = defaultsTable.BK13Frame
+	--end
 
 
 
@@ -681,33 +681,33 @@ function BagsFrameEventFrame.CheckSVs()
 		MoveBagsF_DB.RBBagsFrame = defaultsTable.RBBagsFrame
 	end
 
-	if MoveBagsF_DB.BK7Frame.x == nil then
-		MoveBagsF_DB.BK7Frame = defaultsTable.BK7Frame
-	end
-
-	if MoveBagsF_DB.BK8Frame.x == nil then
-		MoveBagsF_DB.BK8Frame = defaultsTable.BK8Frame
-	end
-
-	if MoveBagsF_DB.BK9Frame.x == nil then
-		MoveBagsF_DB.BK9Frame = defaultsTable.BK9Frame
-	end
-
-	if MoveBagsF_DB.BK10Frame.x == nil then
-		MoveBagsF_DB.BK10Frame = defaultsTable.BK10Frame
-	end
-
-	if MoveBagsF_DB.BK11Frame.x == nil then
-		MoveBagsF_DB.BK11Frame = defaultsTable.BK11Frame
-	end
-
-	if MoveBagsF_DB.BK12Frame.x == nil then
-		MoveBagsF_DB.BK12Frame = defaultsTable.BK12Frame
-	end
-
-	if MoveBagsF_DB.BK13Frame.x == nil then
-		MoveBagsF_DB.BK13Frame = defaultsTable.BK13Frame
-	end
+	--if MoveBagsF_DB.BK7Frame.x == nil then
+	--	MoveBagsF_DB.BK7Frame = defaultsTable.BK7Frame
+	--end
+--
+	--if MoveBagsF_DB.BK8Frame.x == nil then
+	--	MoveBagsF_DB.BK8Frame = defaultsTable.BK8Frame
+	--end
+--
+	--if MoveBagsF_DB.BK9Frame.x == nil then
+	--	MoveBagsF_DB.BK9Frame = defaultsTable.BK9Frame
+	--end
+--
+	--if MoveBagsF_DB.BK10Frame.x == nil then
+	--	MoveBagsF_DB.BK10Frame = defaultsTable.BK10Frame
+	--end
+--
+	--if MoveBagsF_DB.BK11Frame.x == nil then
+	--	MoveBagsF_DB.BK11Frame = defaultsTable.BK11Frame
+	--end
+--
+	--if MoveBagsF_DB.BK12Frame.x == nil then
+	--	MoveBagsF_DB.BK12Frame = defaultsTable.BK12Frame
+	--end
+--
+	--if MoveBagsF_DB.BK13Frame.x == nil then
+	--	MoveBagsF_DB.BK13Frame = defaultsTable.BK13Frame
+	--end
 --[[
 	if MoveBagsF_DB.BankFrame == nil then
 		MoveBagsF_DB.BankFrame = defaultsTable.BankFrame
@@ -759,39 +759,39 @@ function BagsFrameEventFrame.ReMoveStuff()
 		ContainerFrame6:SetScale(MoveBagsPC_DB.BagsSetting.scale);
 
 		
-		ContainerFrame7:ClearAllPoints()
-		ContainerFrame7:SetPoint(MoveBagsPC_DB.BK7Frame.point, UIParent, MoveBagsPC_DB.BK7Frame.relativePoint, MoveBagsPC_DB.BK7Frame.x, MoveBagsPC_DB.BK7Frame.y);
-		ContainerFrame7:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame8:ClearAllPoints()
-		ContainerFrame8:SetPoint(MoveBagsPC_DB.BK8Frame.point, UIParent, MoveBagsPC_DB.BK8Frame.relativePoint, MoveBagsPC_DB.BK8Frame.x, MoveBagsPC_DB.BK8Frame.y);
-		ContainerFrame8:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame9:ClearAllPoints()
-		ContainerFrame9:SetPoint(MoveBagsPC_DB.BK9Frame.point, UIParent, MoveBagsPC_DB.BK9Frame.relativePoint, MoveBagsPC_DB.BK9Frame.x, MoveBagsPC_DB.BK9Frame.y);
-		ContainerFrame9:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame10:ClearAllPoints()
-		ContainerFrame10:SetPoint(MoveBagsPC_DB.BK10Frame.point, UIParent, MoveBagsPC_DB.BK10Frame.relativePoint, MoveBagsPC_DB.BK10Frame.x, MoveBagsPC_DB.BK10Frame.y);
-		ContainerFrame10:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame11:ClearAllPoints()
-		ContainerFrame11:SetPoint(MoveBagsPC_DB.BK11Frame.point, UIParent, MoveBagsPC_DB.BK11Frame.relativePoint, MoveBagsPC_DB.BK11Frame.x, MoveBagsPC_DB.BK11Frame.y);
-		ContainerFrame11:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame12:ClearAllPoints()
-		ContainerFrame12:SetPoint(MoveBagsPC_DB.BK12Frame.point, UIParent, MoveBagsPC_DB.BK12Frame.relativePoint, MoveBagsPC_DB.BK12Frame.x, MoveBagsPC_DB.BK12Frame.y);
-		ContainerFrame12:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame13:ClearAllPoints()
-		ContainerFrame13:SetPoint(MoveBagsPC_DB.BK13Frame.point, UIParent, MoveBagsPC_DB.BK13Frame.relativePoint, MoveBagsPC_DB.BK13Frame.x, MoveBagsPC_DB.BK13Frame.y);
-		ContainerFrame13:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+		--ContainerFrame7:ClearAllPoints()
+		--ContainerFrame7:SetPoint(MoveBagsPC_DB.BK7Frame.point, UIParent, MoveBagsPC_DB.BK7Frame.relativePoint, MoveBagsPC_DB.BK7Frame.x, MoveBagsPC_DB.BK7Frame.y);
+		--ContainerFrame7:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame8:ClearAllPoints()
+		--ContainerFrame8:SetPoint(MoveBagsPC_DB.BK8Frame.point, UIParent, MoveBagsPC_DB.BK8Frame.relativePoint, MoveBagsPC_DB.BK8Frame.x, MoveBagsPC_DB.BK8Frame.y);
+		--ContainerFrame8:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame9:ClearAllPoints()
+		--ContainerFrame9:SetPoint(MoveBagsPC_DB.BK9Frame.point, UIParent, MoveBagsPC_DB.BK9Frame.relativePoint, MoveBagsPC_DB.BK9Frame.x, MoveBagsPC_DB.BK9Frame.y);
+		--ContainerFrame9:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame10:ClearAllPoints()
+		--ContainerFrame10:SetPoint(MoveBagsPC_DB.BK10Frame.point, UIParent, MoveBagsPC_DB.BK10Frame.relativePoint, MoveBagsPC_DB.BK10Frame.x, MoveBagsPC_DB.BK10Frame.y);
+		--ContainerFrame10:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame11:ClearAllPoints()
+		--ContainerFrame11:SetPoint(MoveBagsPC_DB.BK11Frame.point, UIParent, MoveBagsPC_DB.BK11Frame.relativePoint, MoveBagsPC_DB.BK11Frame.x, MoveBagsPC_DB.BK11Frame.y);
+		--ContainerFrame11:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame12:ClearAllPoints()
+		--ContainerFrame12:SetPoint(MoveBagsPC_DB.BK12Frame.point, UIParent, MoveBagsPC_DB.BK12Frame.relativePoint, MoveBagsPC_DB.BK12Frame.x, MoveBagsPC_DB.BK12Frame.y);
+		--ContainerFrame12:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame13:ClearAllPoints()
+		--ContainerFrame13:SetPoint(MoveBagsPC_DB.BK13Frame.point, UIParent, MoveBagsPC_DB.BK13Frame.relativePoint, MoveBagsPC_DB.BK13Frame.x, MoveBagsPC_DB.BK13Frame.y);
+		--ContainerFrame13:SetScale(MoveBagsPC_DB.BagsSetting.scale);
 
 
 	else
@@ -832,39 +832,39 @@ function BagsFrameEventFrame.ReMoveStuff()
 		ContainerFrame6:SetScale(MoveBagsF_DB.BagsSetting.scale);
 
 		
-		ContainerFrame7:ClearAllPoints()
-		ContainerFrame7:SetPoint(MoveBagsF_DB.BK7Frame.point, UIParent, MoveBagsF_DB.BK7Frame.relativePoint, MoveBagsF_DB.BK7Frame.x, MoveBagsF_DB.BK7Frame.y);
-		ContainerFrame7:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame8:ClearAllPoints()
-		ContainerFrame8:SetPoint(MoveBagsF_DB.BK8Frame.point, UIParent, MoveBagsF_DB.BK8Frame.relativePoint, MoveBagsF_DB.BK8Frame.x, MoveBagsF_DB.BK8Frame.y);
-		ContainerFrame8:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame9:ClearAllPoints()
-		ContainerFrame9:SetPoint(MoveBagsF_DB.BK9Frame.point, UIParent, MoveBagsF_DB.BK9Frame.relativePoint, MoveBagsF_DB.BK9Frame.x, MoveBagsF_DB.BK9Frame.y);
-		ContainerFrame9:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame10:ClearAllPoints()
-		ContainerFrame10:SetPoint(MoveBagsF_DB.BK10Frame.point, UIParent, MoveBagsF_DB.BK10Frame.relativePoint, MoveBagsF_DB.BK10Frame.x, MoveBagsF_DB.BK10Frame.y);
-		ContainerFrame10:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame11:ClearAllPoints()
-		ContainerFrame11:SetPoint(MoveBagsF_DB.BK11Frame.point, UIParent, MoveBagsF_DB.BK11Frame.relativePoint, MoveBagsF_DB.BK11Frame.x, MoveBagsF_DB.BK11Frame.y);
-		ContainerFrame11:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame12:ClearAllPoints()
-		ContainerFrame12:SetPoint(MoveBagsF_DB.BK12Frame.point, UIParent, MoveBagsF_DB.BK12Frame.relativePoint, MoveBagsF_DB.BK12Frame.x, MoveBagsF_DB.BK12Frame.y);
-		ContainerFrame12:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame13:ClearAllPoints()
-		ContainerFrame13:SetPoint(MoveBagsF_DB.BK13Frame.point, UIParent, MoveBagsF_DB.BK13Frame.relativePoint, MoveBagsF_DB.BK13Frame.x, MoveBagsF_DB.BK13Frame.y);
-		ContainerFrame13:SetScale(MoveBagsF_DB.BagsSetting.scale);
+		--ContainerFrame7:ClearAllPoints()
+		--ContainerFrame7:SetPoint(MoveBagsF_DB.BK7Frame.point, UIParent, MoveBagsF_DB.BK7Frame.relativePoint, MoveBagsF_DB.BK7Frame.x, MoveBagsF_DB.BK7Frame.y);
+		--ContainerFrame7:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame8:ClearAllPoints()
+		--ContainerFrame8:SetPoint(MoveBagsF_DB.BK8Frame.point, UIParent, MoveBagsF_DB.BK8Frame.relativePoint, MoveBagsF_DB.BK8Frame.x, MoveBagsF_DB.BK8Frame.y);
+		--ContainerFrame8:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame9:ClearAllPoints()
+		--ContainerFrame9:SetPoint(MoveBagsF_DB.BK9Frame.point, UIParent, MoveBagsF_DB.BK9Frame.relativePoint, MoveBagsF_DB.BK9Frame.x, MoveBagsF_DB.BK9Frame.y);
+		--ContainerFrame9:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame10:ClearAllPoints()
+		--ContainerFrame10:SetPoint(MoveBagsF_DB.BK10Frame.point, UIParent, MoveBagsF_DB.BK10Frame.relativePoint, MoveBagsF_DB.BK10Frame.x, MoveBagsF_DB.BK10Frame.y);
+		--ContainerFrame10:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame11:ClearAllPoints()
+		--ContainerFrame11:SetPoint(MoveBagsF_DB.BK11Frame.point, UIParent, MoveBagsF_DB.BK11Frame.relativePoint, MoveBagsF_DB.BK11Frame.x, MoveBagsF_DB.BK11Frame.y);
+		--ContainerFrame11:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame12:ClearAllPoints()
+		--ContainerFrame12:SetPoint(MoveBagsF_DB.BK12Frame.point, UIParent, MoveBagsF_DB.BK12Frame.relativePoint, MoveBagsF_DB.BK12Frame.x, MoveBagsF_DB.BK12Frame.y);
+		--ContainerFrame12:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame13:ClearAllPoints()
+		--ContainerFrame13:SetPoint(MoveBagsF_DB.BK13Frame.point, UIParent, MoveBagsF_DB.BK13Frame.relativePoint, MoveBagsF_DB.BK13Frame.x, MoveBagsF_DB.BK13Frame.y);
+		--ContainerFrame13:SetScale(MoveBagsF_DB.BagsSetting.scale);
 
 	end
 
@@ -915,39 +915,39 @@ function BagsFrameEventFrame.TokenChange()
 		ContainerFrame6:SetScale(MoveBagsPC_DB.BagsSetting.scale);
 
 		
-		ContainerFrame7:ClearAllPoints()
-		ContainerFrame7:Hide()
-		ContainerFrame7:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame8:ClearAllPoints()
-		ContainerFrame8:Hide()
-		ContainerFrame8:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame9:ClearAllPoints()
-		ContainerFrame9:Hide()
-		ContainerFrame9:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame10:ClearAllPoints()
-		ContainerFrame10:Hide()
-		ContainerFrame10:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame11:ClearAllPoints()
-		ContainerFrame11:Hide()
-		ContainerFrame11:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame12:ClearAllPoints()
-		ContainerFrame12:Hide()
-		ContainerFrame12:SetScale(MoveBagsPC_DB.BagsSetting.scale);
-
-		
-		ContainerFrame13:ClearAllPoints()
-		ContainerFrame13:Hide()
-		ContainerFrame13:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+		--ContainerFrame7:ClearAllPoints()
+		--ContainerFrame7:Hide()
+		--ContainerFrame7:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame8:ClearAllPoints()
+		--ContainerFrame8:Hide()
+		--ContainerFrame8:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame9:ClearAllPoints()
+		--ContainerFrame9:Hide()
+		--ContainerFrame9:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame10:ClearAllPoints()
+		--ContainerFrame10:Hide()
+		--ContainerFrame10:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame11:ClearAllPoints()
+		--ContainerFrame11:Hide()
+		--ContainerFrame11:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame12:ClearAllPoints()
+		--ContainerFrame12:Hide()
+		--ContainerFrame12:SetScale(MoveBagsPC_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame13:ClearAllPoints()
+		--ContainerFrame13:Hide()
+		--ContainerFrame13:SetScale(MoveBagsPC_DB.BagsSetting.scale);
 
 
 	else
@@ -988,39 +988,39 @@ function BagsFrameEventFrame.TokenChange()
 		ContainerFrame6:SetScale(MoveBagsF_DB.BagsSetting.scale);
 
 		
-		ContainerFrame7:ClearAllPoints()
-		ContainerFrame7:Hide()
-		ContainerFrame7:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame8:ClearAllPoints()
-		ContainerFrame8:Hide()
-		ContainerFrame8:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame9:ClearAllPoints()
-		ContainerFrame9:Hide()
-		ContainerFrame9:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame10:ClearAllPoints()
-		ContainerFrame10:Hide()
-		ContainerFrame10:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame11:ClearAllPoints()
-		ContainerFrame11:Hide()
-		ContainerFrame11:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame12:ClearAllPoints()
-		ContainerFrame12:Hide()
-		ContainerFrame12:SetScale(MoveBagsF_DB.BagsSetting.scale);
-
-		
-		ContainerFrame13:ClearAllPoints()
-		ContainerFrame13:Hide()
-		ContainerFrame13:SetScale(MoveBagsF_DB.BagsSetting.scale);
+		--ContainerFrame7:ClearAllPoints()
+		--ContainerFrame7:Hide()
+		--ContainerFrame7:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame8:ClearAllPoints()
+		--ContainerFrame8:Hide()
+		--ContainerFrame8:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame9:ClearAllPoints()
+		--ContainerFrame9:Hide()
+		--ContainerFrame9:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame10:ClearAllPoints()
+		--ContainerFrame10:Hide()
+		--ContainerFrame10:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame11:ClearAllPoints()
+		--ContainerFrame11:Hide()
+		--ContainerFrame11:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame12:ClearAllPoints()
+		--ContainerFrame12:Hide()
+		--ContainerFrame12:SetScale(MoveBagsF_DB.BagsSetting.scale);
+--
+		--
+		--ContainerFrame13:ClearAllPoints()
+		--ContainerFrame13:Hide()
+		--ContainerFrame13:SetScale(MoveBagsF_DB.BagsSetting.scale);
 
 	end
 
@@ -1115,32 +1115,32 @@ function BagsFrameEventFrame:OnEvent(event,arg1)
 		ContainerFrame6:SetUserPlaced(false);
 		ContainerFrame6:ClearAllPoints();
 		
-		ContainerFrame7:SetUserPlaced(false);
-		ContainerFrame7:ClearAllPoints();
-		
-		ContainerFrame8:SetUserPlaced(false);
-		ContainerFrame8:ClearAllPoints();
-		
-		ContainerFrame9:SetUserPlaced(false);
-		ContainerFrame9:ClearAllPoints();
-		
-		ContainerFrame10:SetUserPlaced(false);
-		ContainerFrame10:ClearAllPoints();
-		
-		ContainerFrame11:SetUserPlaced(false);
-		ContainerFrame11:ClearAllPoints();
-		
-		ContainerFrame12:SetUserPlaced(false);
-		ContainerFrame12:ClearAllPoints();
-		
-		ContainerFrame13:SetUserPlaced(false);
-		ContainerFrame13:ClearAllPoints();
-		
-		ContainerFrame13:SetUserPlaced(false);
-		ContainerFrame13:ClearAllPoints();
-		
-		BankFrame:SetUserPlaced(false);
-		BankFrame:ClearAllPoints();
+		--ContainerFrame7:SetUserPlaced(false);
+		--ContainerFrame7:ClearAllPoints();
+		--
+		--ContainerFrame8:SetUserPlaced(false);
+		--ContainerFrame8:ClearAllPoints();
+		--
+		--ContainerFrame9:SetUserPlaced(false);
+		--ContainerFrame9:ClearAllPoints();
+		--
+		--ContainerFrame10:SetUserPlaced(false);
+		--ContainerFrame10:ClearAllPoints();
+		--
+		--ContainerFrame11:SetUserPlaced(false);
+		--ContainerFrame11:ClearAllPoints();
+		--
+		--ContainerFrame12:SetUserPlaced(false);
+		--ContainerFrame12:ClearAllPoints();
+		--
+		--ContainerFrame13:SetUserPlaced(false);
+		--ContainerFrame13:ClearAllPoints();
+		--
+		--ContainerFrame13:SetUserPlaced(false);
+		--ContainerFrame13:ClearAllPoints();
+		--
+		--BankFrame:SetUserPlaced(false);
+		--BankFrame:ClearAllPoints();
 	end
 end
 BagsFrameEventFrame:SetScript("OnEvent",BagsFrameEventFrame.OnEvent);

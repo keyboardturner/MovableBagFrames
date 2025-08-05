@@ -1,6 +1,6 @@
 # 0.2.1
 
-11.2.0 toc update
+11.2.0 toc update, bank frames removed
 
 # 0.2.0
 
