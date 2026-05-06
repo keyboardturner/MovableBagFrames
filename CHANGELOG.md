@@ -4,6 +4,10 @@ Rewrite of addon placement/showing. This should come with a few improvements lik
 
 Also completely refactored repetitive code blocks significantly
 
+Standardized the settings frame to be more in line with other searchable settings
+
+Added localizations
+
 # 0.2.6
 
 12.0.5 toc update

@@ -10,6 +10,29 @@
 ## X-WoWI-ID: 26484
 ## X-Wago-ID: Xb6XwJNp
 
+## Title-enUS: Movable Bag Frames
+## Notes-enUS: Allows the bag frames to be resizeable and movable.
+## Title-esMX: Marcos de bolsas movibles
+## Notes-esMX: Permite que los marcos de las bolsas sean redimensionables y movibles.
+## Title-esES: Marcos de bolsas movibles
+## Notes-esES: Permite que los marcos de las bolsas sean redimensionables y movibles.
+## Title-deDE: Bewegliche Taschenfenster
+## Notes-deDE: Ermöglicht das Skalieren und Verschieben der Taschenfenster.
+## Title-frFR: Fenêtres de sacs déplaçables
+## Notes-frFR: Permet aux fenêtres de sacs d’être redimensionnables et déplaçables.
+## Title-itIT: Finestre borse mobili
+## Notes-itIT: Consente alle finestre delle borse di essere ridimensionabili e mobili.
+## Title-ptBR: Janelas de bolsas móveis
+## Notes-ptBR: Permite que as janelas das bolsas sejam redimensionáveis e móveis.
+## Title-ruRU: Перемещаемые окна сумок
+## Notes-ruRU: Позволяет изменять размер и перемещать окна сумок.
+## Title-koKR: 이동 가능한 가방 창
+## Notes-koKR: 가방 창의 크기 조절 및 이동을 가능하게 합니다.
+## Title-zhCN: 可移动背包框体
+## Notes-zhCN: 允许背包框体可调整大小并移动。
+## Title-zhTW: 可移動背包框體
+## Notes-zhTW: 允許背包框體可調整大小並移動。
+
 ## Category-enUS: User Interface
 ## Category-deDE: Benutzerinterface
 ## Category-esES: Interfaz de usuario
@@ -22,4 +45,5 @@
 ## Category-zhCN: 用户界面
 ## Category-zhTW: 使用者介面
 
+Localization.lua
 MovableBagFrames.lua

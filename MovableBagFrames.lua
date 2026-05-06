@@ -1,3 +1,7 @@
+local _, MBF = ...
+
+local L = MBF.L
+
 local defaultsTable = {
 	CBBagsFrame = {x = -10, y = -85, point = "BOTTOMRIGHT", relativePoint = "BOTTOMRIGHT",},
 	
@@ -55,117 +59,6 @@ container 13: CENTER UIParent CENTER 338 -177
 
 
 ]]
-
-local BagsFramePanel = CreateFrame("FRAME", "BagStuff");
-BagsFramePanel.name = "Movable Bag Frames";
-
-BagsFramePanel.Headline = BagsFramePanel:CreateFontString(nil, "OVERLAY", "GameFontNormal");
-BagsFramePanel.Headline:SetFont(BagsFramePanel.Headline:GetFont(), 23);
-BagsFramePanel.Headline:SetTextColor(0,1,0,1);
-BagsFramePanel.Headline:ClearAllPoints();
-BagsFramePanel.Headline:SetPoint("TOPLEFT", BagsFramePanel, "TOPLEFT",12,-12);
-BagsFramePanel.Headline:SetText("Movable & Resizable Bag Frames");
-
-BagsFramePanel.Version = BagsFramePanel:CreateFontString(nil, "OVERLAY", "GameFontNormal");
-BagsFramePanel.Version:SetFont(BagsFramePanel.Version:GetFont(), 12);
-BagsFramePanel.Version:SetTextColor(1,1,1,1);
-BagsFramePanel.Version:ClearAllPoints();
-BagsFramePanel.Version:SetPoint("TOPLEFT", BagsFramePanel, "TOPLEFT",400,-21);
-BagsFramePanel.Version:SetText("Version: " .. C_AddOns.GetAddOnMetadata("MovableBagFrames", "Version"));
-
-BagsFramePanel.CBSlider = CreateFrame("Slider", "BagsFrameScaleCBSlider", BagsFramePanel, "OptionsSliderTemplate");
-BagsFramePanel.CBSlider:SetWidth(300);
-BagsFramePanel.CBSlider:SetHeight(15);
-BagsFramePanel.CBSlider:SetMinMaxValues(50,150);
-BagsFramePanel.CBSlider:SetValueStep(1);
-BagsFramePanel.CBSlider:ClearAllPoints();
-BagsFramePanel.CBSlider:SetPoint("TOPLEFT", BagsFramePanel, "TOPLEFT",12,-53);
-getglobal(BagsFramePanel.CBSlider:GetName() .. 'Low'):SetText('50');
-getglobal(BagsFramePanel.CBSlider:GetName() .. 'High'):SetText('150');
-getglobal(BagsFramePanel.CBSlider:GetName() .. 'Text'):SetText('Bag Frames Size');
-BagsFramePanel.CBSlider:SetScript("OnValueChanged", function()
-	local scaleValue = getglobal(BagsFramePanel.CBSlider:GetName()):GetValue() / 100;
-	MoveBagsF_DB.BagsSetting.scale = scaleValue;
-end)
-
-BagsFramePanel.CBCheckbox = CreateFrame("CheckButton", "CBCheckbox", BagsFramePanel, "UICheckButtonTemplate");
-BagsFramePanel.CBCheckbox:ClearAllPoints();
-BagsFramePanel.CBCheckbox:SetPoint("TOPLEFT", 350, -53);
-getglobal(BagsFramePanel.CBCheckbox:GetName().."Text"):SetText("Bag Frames Locked");
-
-BagsFramePanel.CBCheckbox:SetScript("OnClick", function(self)
-	if BagsFramePanel.CBCheckbox:GetChecked() then
-		MoveBagsF_DB.BagsSetting.locked = true;
-	else
-		MoveBagsF_DB.BagsSetting.locked = false;
-	end
-end);
-
-BagsFramePanel.SortCheckbox = CreateFrame("CheckButton", "SortCheckbox", BagsFramePanel, "UICheckButtonTemplate");
-BagsFramePanel.SortCheckbox:ClearAllPoints();
-BagsFramePanel.SortCheckbox:SetPoint("TOPLEFT", 350, -53*2);
-getglobal(BagsFramePanel.SortCheckbox:GetName().."Text"):SetText("Sort Bags Right to Left");
-getglobal(BagsFramePanel.SortCheckbox:GetName().."Text"):SetJustifyH("LEFT");
-
-BagsFramePanel.SortCheckbox:SetScript("OnClick", function(self)
-	if BagsFramePanel.SortCheckbox:GetChecked() then
-		MoveBagsF_DB.BagsSetting.sort = true;
-		C_Container.SetSortBagsRightToLeft(true)
-	else
-		MoveBagsF_DB.BagsSetting.sort = false;
-		C_Container.SetSortBagsRightToLeft(false)
-	end
-end);
-
-BagsFramePanel.InsertCheckbox = CreateFrame("CheckButton", "InsertCheckbox", BagsFramePanel, "UICheckButtonTemplate");
-BagsFramePanel.InsertCheckbox:ClearAllPoints();
-BagsFramePanel.InsertCheckbox:SetPoint("TOPLEFT", 350, -53*3);
-getglobal(BagsFramePanel.InsertCheckbox:GetName().."Text"):SetText("Loot Items Right to Left");
-
-BagsFramePanel.InsertCheckbox:SetScript("OnClick", function(self)
-	if BagsFramePanel.InsertCheckbox:GetChecked() then
-		MoveBagsF_DB.BagsSetting.insert = true;
-		C_Container.SetInsertItemsLeftToRight(true)
-	else
-		MoveBagsF_DB.BagsSetting.insert = false;
-		C_Container.SetInsertItemsLeftToRight(false)
-	end
-end);
-
-
-BagsFramePanel.ClickBagCheckbox = CreateFrame("CheckButton", "ClickBagCheckbox", BagsFramePanel, "UICheckButtonTemplate");
-BagsFramePanel.ClickBagCheckbox:ClearAllPoints();
-BagsFramePanel.ClickBagCheckbox:SetPoint("TOPLEFT", 350, -53*4);
-getglobal(BagsFramePanel.ClickBagCheckbox:GetName().."Text"):SetText("Correct Micromenu Bag Button Click\n(Experimental)");
-getglobal(BagsFramePanel.ClickBagCheckbox:GetName().."Text"):SetJustifyH("LEFT");
-
-BagsFramePanel.ClickBagCheckbox:SetScript("OnClick", function(self)
-	if BagsFramePanel.ClickBagCheckbox:GetChecked() then
-		MoveBagsF_DB.BagsSetting.click = true;
-	else
-		MoveBagsF_DB.BagsSetting.click = false;
-	end
-end);
-
-
-BagsFramePanel.CharSpecificCheckbox = CreateFrame("CheckButton", "CharSpecificCheckbox", BagsFramePanel, "UICheckButtonTemplate");
-BagsFramePanel.CharSpecificCheckbox:ClearAllPoints();
-BagsFramePanel.CharSpecificCheckbox:SetPoint("TOPLEFT", 350, -53*5);
-getglobal(BagsFramePanel.CharSpecificCheckbox:GetName().."Text"):SetText("Character-Specific Bag Positions");
-getglobal(BagsFramePanel.CharSpecificCheckbox:GetName().."Text"):SetJustifyH("LEFT");
-
-BagsFramePanel.CharSpecificCheckbox:SetScript("OnClick", function(self)
-	if BagsFramePanel.CharSpecificCheckbox:GetChecked() then
-		MoveBagsF_DB.BagsSetting.perChar = true;
-	else
-		MoveBagsF_DB.BagsSetting.perChar = false;
-	end
-end);
-
-local category, layout = Settings.RegisterCanvasLayoutCategory(BagsFramePanel, BagsFramePanel.name, BagsFramePanel.name);
-category.ID = BagsFramePanel.name;
-Settings.RegisterAddOnCategory(category)
-
 
 local BagsFrameEventFrame = CreateFrame("Frame");
 BagsFrameEventFrame:RegisterEvent("ADDON_LOADED");
@@ -385,40 +278,63 @@ EventRegistry:RegisterCallback('ContainerFrame.OpenBag', BagsFrameEventFrame.Sta
 --ContainerFrame4 -- bottom left, -11, 0
 --ContainerFrame5 -- top right, 0, 8
 
+local function InitializeSettings()
+	local category, layout = Settings.RegisterVerticalLayoutCategory(L["MBF_Title"])
+	local CreateCheckbox = Settings.CreateCheckbox or Settings.CreateCheckBox
 
-function BagsFrameEventFrame:OnEvent(event,arg1)
+	local function GetScaleValue()
+		local db = MoveBagsF_DB.BagsSetting.perChar and MoveBagsPC_DB or MoveBagsF_DB
+		return db.BagsSetting.scale or 1
+	end
+
+	local function SetScaleValue(value)
+		local db = MoveBagsF_DB.BagsSetting.perChar and MoveBagsPC_DB or MoveBagsF_DB
+		db.BagsSetting.scale = value
+		BagsFrameEventFrame.ReMoveStuff()
+	end
+
+	local scaleSetting = Settings.RegisterProxySetting(category, "MBF_Scale", "number", L["BagFramesScale"], 1, GetScaleValue, SetScaleValue)
+	local sliderOptions = Settings.CreateSliderOptions(0.5, 1.5, 0.01)
+	sliderOptions:SetLabelFormatter(MinimalSliderWithSteppersMixin.Label.Right)
+	Settings.CreateSlider(category, scaleSetting, sliderOptions, L["BagFramesScale"])
+
+	local lockedSetting = Settings.RegisterAddOnSetting(category, "MBF_Locked", "locked", MoveBagsF_DB.BagsSetting, "boolean", L["LockBagFrames"], false)
+	CreateCheckbox(category, lockedSetting, L["LockBagFrames"])
+
+	local sortSetting = Settings.RegisterAddOnSetting(category, "MBF_Sort", "sort", MoveBagsF_DB.BagsSetting, "boolean", L["SortBagsRightLeft"], false)
+	CreateCheckbox(category, sortSetting, L["SortBagsRightLeft"])
+	Settings.SetOnValueChangedCallback("MBF_Sort", function(_, _, value)
+		C_Container.SetSortBagsRightToLeft(value)
+	end)
+
+	local insertSetting = Settings.RegisterAddOnSetting(category, "MBF_Insert", "insert", MoveBagsF_DB.BagsSetting, "boolean", L["LootItemsRightLeft"], false)
+	CreateCheckbox(category, insertSetting, L["LootItemsRightLeft"])
+	Settings.SetOnValueChangedCallback("MBF_Insert", function(_, _, value)
+		C_Container.SetInsertItemsLeftToRight(value)
+	end)
+
+	local perCharSetting = Settings.RegisterAddOnSetting(category, "MBF_PerChar", "perChar", MoveBagsF_DB.BagsSetting, "boolean", L["CharSpecificBagPositions"], true)
+	CreateCheckbox(category, perCharSetting, L["CharSpecificBagPositions"])
+	Settings.SetOnValueChangedCallback("MBF_PerChar", function(_, _, value)
+		BagsFrameEventFrame.ReMoveStuff()
+	end)
+
+	Settings.RegisterAddOnCategory(category)
+end
+
+function BagsFrameEventFrame:OnEvent(event, arg1)
 	if event == "ADDON_LOADED" and arg1 == "MovableBagFrames" then
 		BagsFrameEventFrame.CheckSVs()
+		InitializeSettings()
 
-		BagsFramePanel.CBSlider:SetValue(MoveBagsF_DB.BagsSetting.scale*100);
-		BagsFramePanel.CBCheckbox:SetChecked(MoveBagsF_DB.BagsSetting.locked);
-		BagsFramePanel.SortCheckbox:SetChecked(MoveBagsF_DB.BagsSetting.sort);
-		BagsFramePanel.InsertCheckbox:SetChecked(MoveBagsF_DB.BagsSetting.insert);
 		C_Container.SetSortBagsRightToLeft(MoveBagsF_DB.BagsSetting.sort)
 		C_Container.SetInsertItemsLeftToRight(MoveBagsF_DB.BagsSetting.insert)
-
-		BagsFramePanel.ClickBagCheckbox:SetChecked(MoveBagsF_DB.BagsSetting.click);
-		BagsFramePanel.CharSpecificCheckbox:SetChecked(MoveBagsF_DB.BagsSetting.perChar);
 	end
 	if event ~= "ADDON_LOADED" then
 		BagsFrameEventFrame.ReMoveStuff()
 	end
 end
-BagsFrameEventFrame:SetScript("OnEvent",BagsFrameEventFrame.OnEvent);
-
-
- -- "fix" button click, no longer taints
-function BagsFrameEventFrame.Test()
-	if MoveBagsF_DB.BagsSetting.perChar == true then
-		if MoveBagsPC_DB.BagsSetting.click == true then
-			BagsFrameEventFrame.ReMoveStuff()
-		end
-	else
-		if MoveBagsF_DB.BagsSetting.click == true then
-			BagsFrameEventFrame.ReMoveStuff()
-		end
-	end
-end
+BagsFrameEventFrame:SetScript("OnEvent", BagsFrameEventFrame.OnEvent)
 
 hooksecurefunc("UpdateContainerFrameAnchors", function()
 	--if not InCombatLockdown() then
