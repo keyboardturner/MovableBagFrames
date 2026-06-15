@@ -1,3 +1,7 @@
+# 1.0.1
+
+12.0.7 toc update
+
 # 1.0.0
 
 Rewrite of addon placement/showing. This should come with a few improvements like no longer closing the bag frame "randomly" to avoid taint issues (like tracking/untracking currencies).
